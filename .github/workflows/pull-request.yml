@@ -25,6 +25,7 @@ jobs:
           profile: minimal
           toolchain: stable
           components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
       - name: Check code format
         run: make format-test
   cargo-test:
@@ -37,6 +38,7 @@ jobs:
         with:
           profile: minimal
           toolchain: stable
+      - uses: Swatinem/rust-cache@v2
       - name: Run tests
         run: make cargo-test
   integration-test:
@@ -51,6 +53,7 @@ jobs:
           profile: minimal
           toolchain: stable
           target: x86_64-unknown-linux-musl
+      - uses: Swatinem/rust-cache@v2
       - name: Run integration tests
         run: make integration-test
         env:
