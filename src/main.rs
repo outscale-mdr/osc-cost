@@ -11,7 +11,7 @@ mod core;
 mod oapi;
 mod ods;
 mod prometheus;
-const VERSION: &str = env!("CARGO_PKG_VERSION");
+use osc_cost::VERSION;
 
 fn main() -> Result<(), Box<dyn Error>> {
     env_logger::init();
